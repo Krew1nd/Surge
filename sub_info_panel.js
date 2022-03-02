@@ -43,8 +43,9 @@ let args = getArgs();
     content.push(`${formatTime(expire)}到期`);
   }
 
+  if (resetDayLeft)
   $done({
-    title: `${args.title} • ${resetDayLeft}天后重置`,
+    title: `${args.title}{content.push(` • ${resetDayLeft}天后重置`)}`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
