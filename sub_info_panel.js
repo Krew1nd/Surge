@@ -37,6 +37,10 @@ let args = getArgs();
   let total = info.total;
   let expire = args.expire || info.expire;
   let content = [`已用${bytesToSize(used)}／总计${bytesToSize(total)}`];
+  
+  if (resetDayLeft) {
+    content.push(`${resetDayLeft}天后重置`);
+  }
 
   if (expire) {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
@@ -44,7 +48,7 @@ let args = getArgs();
   }
 
   $done({
-    title: `${args.title} • ${resetDayLeft}天后重置`,
+    title: `${args.title}`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
