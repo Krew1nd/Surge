@@ -116,11 +116,14 @@ function getRmainingDays(resetDay) {
   } else {
     daysInMonth = new Date(year, month + 1, 0).getDate();
   }
-  if (resetDay = 0) {
-    daysInMonth = ∞
-  }
 
   return daysInMonth - today + resetDay;
+
+  if (resetDay = 0) {
+    daysInMonth = ∞;
+  }
+
+  return daysInMonth;
 }
 
 function bytesToSize(bytes) {
