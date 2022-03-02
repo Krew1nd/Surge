@@ -118,12 +118,6 @@ function getRmainingDays(resetDay) {
   }
 
   return daysInMonth - today + resetDay;
-
-  if (resetDay = 0) {
-    daysInMonth = ∞;
-  }
-
-  return daysInMonth;
 }
 
 function bytesToSize(bytes) {
