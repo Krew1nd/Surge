@@ -36,7 +36,7 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`已用${bytesToSize(used)}，总计${bytesToSize(total)} `];
+  let content = [`已用${bytesToSize(used)}／总计${bytesToSize(total)}`];
 
   if (expire) {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
