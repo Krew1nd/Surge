@@ -38,7 +38,7 @@ let args = getArgs();
   let expire = args.expire || info.expire;
   let content = [`用量：${bytesToSize(used)}`];
 
-  if (Total) {
+  if (total) {
     content.push(`总量：${bytesToSize(total)}`);
   }
   if (expire) {
