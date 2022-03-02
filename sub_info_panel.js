@@ -1,7 +1,6 @@
 /*
-Surge配置参考注释，感谢@asukanana,感谢@congcong.
+Surge配置参考注释
 
-示例↓↓↓ 
 ----------------------------------------
 
 [Script]
@@ -23,6 +22,7 @@ Sub_info = script-name=Sub_info,update-interval=600
 可选参数"icon=xxx" 可以自定义图标，内容为任意有效的 SF Symbol Name，如 bolt.horizontal.circle.fill，详细可以下载app https://apps.apple.com/cn/app/sf-symbols-browser/id1491161336
 
 可选参数"color=xxx" 当使用 icon 字段时，可传入 color 字段控制图标颜色，字段内容为颜色的 HEX 编码。如：color=#007aff
+
 ----------------------------------------
 */
 
@@ -36,7 +36,7 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`用量：${bytesToSize(used)} | ${bytesToSize(total)}`];
+  let content = [`用量：${bytesToSize(used)}｜${bytesToSize(total)}`];
 
   if (resetDayLeft) {
     content.push(`重置：剩余${resetDayLeft}天`);
@@ -53,7 +53,7 @@ let args = getArgs();
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} | ${hour}:${minutes}`,
+    title: `${args.title}·${hour}:${minutes}`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
