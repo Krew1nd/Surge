@@ -36,24 +36,18 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`用量：${bytesToSize(used)}<${bytesToSize(total)}>`];
+  let content = [`用量：${bytesToSize(used)}`];
 
-  if (resetDayLeft) {
-    content.push(`重置：剩余${resetDayLeft}天`);
+  if (Total) {
+    content.push(`总量：${bytesToSize(total)}`);
   }
   if (expire) {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
     content.push(`到期：${formatTime(expire)}`);
   }
 
-  let now = new Date();
-  let hour = now.getHours();
-  let minutes = now.getMinutes();
-  hour = hour > 9 ? hour : "0" + hour;
-  minutes = minutes > 9 ? minutes : "0" + minutes;
-
   $done({
-    title: `${args.title} • ${hour}:${minutes}`,
+    title: `${args.title} • ${resetDayLeft}天后重置`,
     content: content.join("\n"),
     icon: args.icon || "airplane.circle",
     "icon-color": args.color || "#007aff",
