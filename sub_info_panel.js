@@ -50,6 +50,8 @@ let args = getArgs();
   $done({
     title: `${args.title}`,
     content: content.join("\n"),
+    icon: args.icon,
+    "icon-color": args.color,
   });
 })();
 
