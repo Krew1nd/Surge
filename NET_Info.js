@@ -1,3 +1,11 @@
+//
+[Panel]
+Netinfo = script-name=Netinfo, update-interval=600
+
+[Script]
+Netinfo = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/unknowntokyo/surge-list/master/Surge/NET_Info.js,argument=group=策略组名称,script-update-interval=0
+//
+
 ;(async () => {
 
 let params = getParams($argument)
@@ -13,16 +21,16 @@ $httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, da
       $done({
       title:"节点信息："+rootName,
       content:
-		`IP地址：${jsonData.query}\n` + `运营商：${jsonData.isp}\n` + `城市：${jsonData.city}`,
-      icon: "checkmark.icloud.fill",
+                `IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `城市：${jsonData.city}`,
+      icon: "info.circle",
        "icon-color":"#369CF3",
     });
       } else {
       $done({
       title:"节点信息："+rootName,
       content:
-		`IP地址：${jsonData.query}\n` + `城市：${jsonData.city}`,
-      icon: "checkmark.icloud.fill",
+		`IP：${jsonData.query}\n` + `城市：${jsonData.city}`,
+      icon: "info.circle",
        "icon-color":"#369CF3",
     });
       }
@@ -32,16 +40,16 @@ $httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, da
       $done({
       title:"节点信息："+rootName,
       content:
-		`IP地址：${jsonData.query}\n` + `运营商：${jsonData.isp}\n` + `数据中心：${jsonData.org}`,
-      icon: "checkmark.icloud.fill",
+		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `数据中心：${jsonData.org}`,
+      icon: "info.circle",
        "icon-color":"#369CF3",
     });
       } else {
       $done({
       title:"节点信息："+rootName,
       content:
-		`IP地址：${jsonData.query}\n` + `运营商：${jsonData.isp}\n` + `城市：${jsonData.city}`,
-      icon: "checkmark.icloud.fill",
+		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `城市：${jsonData.city}`,
+      icon: "info.circle",
        "icon-color":"#369CF3",
      });
     }
