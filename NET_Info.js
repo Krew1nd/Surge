@@ -19,7 +19,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     case "":
       if (`${jsonData.isp}` != "") {
       $done({
-      title:"节点信息："+rootName,
+      title:rootName,
       content:
                 `IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
@@ -27,7 +27,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     });
       } else {
       $done({
-      title:"节点信息："+rootName,
+      title:rootName,
       content:
 		`IP：${jsonData.query}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
@@ -38,7 +38,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     default:
       if (`${jsonData.isp}` != "" && `${jsonData.isp}` != `${jsonData.org}`) {
       $done({
-      title:"节点信息："+rootName,
+      title:rootName,
       content:
 		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `数据中心：${jsonData.org}`,
       icon: "info.circle",
@@ -46,7 +46,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     });
       } else {
       $done({
-      title:"节点信息："+rootName,
+      title:rootName,
       content:
 		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
