@@ -1,10 +1,10 @@
-//
+/*
 [Panel]
 Netinfo = script-name=Netinfo, update-interval=600
 
 [Script]
 Netinfo = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/unknowntokyo/surge-list/master/Surge/NET_Info.js,argument=group=策略组名称,script-update-interval=0
-//
+*/
 
 ;(async () => {
 
