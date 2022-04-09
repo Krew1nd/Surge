@@ -13,7 +13,7 @@ let params = getParams($argument)
 let group = params.group
 let rootName = (await httpAPI("/v1/policy_groups/select?group_name="+encodeURIComponent(group)+"")).policy;
 
-$httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, data) {
+$httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response, data) {
     const jsonData = JSON.parse(data);
   switch (`${jsonData.org}`){
     case "":
@@ -21,7 +21,7 @@ $httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, da
       $done({
       title:"节点信息："+rootName,
       content:
-                `IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `城市：${jsonData.city}`,
+                `IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
        "icon-color":"#369CF3",
     });
@@ -29,7 +29,7 @@ $httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, da
       $done({
       title:"节点信息："+rootName,
       content:
-		`IP：${jsonData.query}\n` + `城市：${jsonData.city}`,
+		`IP：${jsonData.query}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
        "icon-color":"#369CF3",
     });
@@ -48,7 +48,7 @@ $httpClient.get('http://ip-api.com/json/?lang=en', function (error, response, da
       $done({
       title:"节点信息："+rootName,
       content:
-		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `城市：${jsonData.city}`,
+		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
        "icon-color":"#369CF3",
      });
