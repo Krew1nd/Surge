@@ -39,7 +39,7 @@ let args = getArgs();
   let content = [`已用${bytesToSize(used)}／总计${bytesToSize(total)}`];
   
   if (resetDayLeft) {
-    content.push(`${resetDayLeft}天后重置`);
+    content.push(`${resetDayLeft}天后重置流量`);
   }
 
   if (expire) {
