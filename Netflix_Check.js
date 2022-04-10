@@ -31,11 +31,11 @@ const FILM_ID = 81215567
 const AREA_TEST_FILM_ID = 80018499
 const DEFAULT_OPTIONS = {
   title: 'Netflix 解锁检测',
-  fullContent: '完整支持Netflix，地区：#REGION_FLAG# #REGION_NAME#',
+  fullContent: '解锁#REGION_FLAG##REGION_NAME#地区',
   fullIcon: '',
   fullIconColor: '',
   fullStyle: 'good',
-  onlyOriginalContent: '仅支持自制剧，地区：#REGION_FLAG# #REGION_NAME#',
+  onlyOriginalContent: '仅支持自制剧',
   onlyOriginalIcon: '',
   onlyOriginalIconColor: '',
   onlyOriginalStyle: 'info',
@@ -43,7 +43,7 @@ const DEFAULT_OPTIONS = {
   notAvailableIcon: '',
   notAvailableIconColor: '',
   notAvailableStyle: 'alert',
-  errorContent: '检测失败，请重试',
+  errorContent: '检测失败',
   errorIcon: '',
   errorIconColor: '',
   errorStyle: 'error',
