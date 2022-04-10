@@ -1,10 +1,10 @@
 /**
  *
  * [Panel]
- * nf_check = script-name=nf_check, title="Netflix 解锁检测", content="请刷新", update-interval=1
+ * Netflix_Check = script-name=Netflix_Check, title="Netflix 解锁检测", content="请刷新面板", update-interval=1
  *
  * [Script]
- * nf_check = type=generic, script-path=https://gist.githubusercontent.com/Hyseen/b06e911a41036ebc36acf04ddebe7b9a/raw/nf_check.js?version=1633074636264, argument=title=Netflix 解锁检测
+ * Netflix_Check = type=generic, script-path=https://gist.githubusercontent.com/Hyseen/b06e911a41036ebc36acf04ddebe7b9a/raw/nf_check.js?version=1633074636264, argument=title=Netflix 解锁检测
  *
  * 支持使用脚本使用 argument 参数自定义配置，如：argument=key1=URLEncode(value1)&key2=URLEncode(value2)，具体参数如下所示，
  * title: 面板标题
@@ -32,20 +32,20 @@ const AREA_TEST_FILM_ID = 80018499
 const DEFAULT_OPTIONS = {
   title: 'Netflix 解锁检测',
   fullContent: '解锁#REGION_FLAG##REGION_NAME#地区',
-  fullIcon: '',
-  fullIconColor: '',
+  fullIcon: 'checkmark.seal.fill',
+  fullIconColor: '#FF35C759',
   fullStyle: 'good',
   onlyOriginalContent: '仅支持自制剧',
-  onlyOriginalIcon: '',
-  onlyOriginalIconColor: '',
+  onlyOriginalIcon: 'info.circle.fill',
+  onlyOriginalIconColor: '#FF007AFF',
   onlyOriginalStyle: 'info',
   notAvailableContent: '不支持 Netflix',
-  notAvailableIcon: '',
-  notAvailableIconColor: '',
+  notAvailableIcon: 'exclamationmark.triangle.fill',
+  notAvailableIconColor: '#FFFFCC00',
   notAvailableStyle: 'alert',
   errorContent: '检测失败',
-  errorIcon: '',
-  errorIconColor: '',
+  errorIcon: 'xmark.seal.fill',
+  errorIconColor: '#FFFF3A30',
   errorStyle: 'error',
 }
 
