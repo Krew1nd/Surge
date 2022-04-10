@@ -11,7 +11,7 @@ Netinfo = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/
 let params = getParams($argument)
 //获取节点名
 let group = params.group
-let rootName = (await httpAPI("/v1/policy_groups/select?group_name="+encodeURIComponent(group)+"")).policy;
+let rootName = (await httpAPI("/v1/policy_groups/select?group_name="Proxy"")).policy;
 
 $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response, data) {
     const jsonData = JSON.parse(data);
@@ -19,7 +19,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     case "":
       if (`${jsonData.isp}` != "") {
       $done({
-      title:节点信息,
+      title:rootname,
       content:
                 `IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle.fill",
@@ -27,7 +27,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     });
       } else {
       $done({
-      title:节点信息,
+      title:rootname,
       content:
 		`IP：${jsonData.query}\n` + `地区：${jsonData.country}`,
       icon: "info.circle.fill",
@@ -38,7 +38,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     default:
       if (`${jsonData.isp}` != "" && `${jsonData.isp}` != `${jsonData.org}`) {
       $done({
-      title:节点信息,
+      title:rootname,
       content:
 		`IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `数据中心：${jsonData.org}`,
       icon: "info.circle.fill",
@@ -46,7 +46,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     });
       } else {
       $done({
-      title:节点信息,
+      title:rootname,
       content:
 		`IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle.fill",
