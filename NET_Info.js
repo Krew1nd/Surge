@@ -11,7 +11,7 @@ Netinfo = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/
 let params = getParams($argument)
 //获取节点名
 let group = params.group
-let rootName = (await httpAPI("/v1/policy_groups/select?group_name="Proxy"")).policy;
+let rootName = (await httpAPI("/v1/policy_groups/select?group_name= "+encodeURIComponent(group)+"")).policy;
 
 $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response, data) {
     const jsonData = JSON.parse(data);
