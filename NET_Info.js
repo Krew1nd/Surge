@@ -23,7 +23,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
       content:
                 `IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle.fill",
-       "icon-color":"#FF007AFF",
+       "icon-color":"#007AFF",
     });
       } else {
       $done({
@@ -31,7 +31,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
       content:
 		`IP：${jsonData.query}\n` + `地区：${jsonData.country}`,
       icon: "info.circle.fill",
-       "icon-color":"#FF007AFF",
+       "icon-color":"#007AFF",
     });
       }
       break;
@@ -42,7 +42,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
       content:
 		`IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `数据中心：${jsonData.org}`,
       icon: "info.circle.fill",
-       "icon-color":"#FF007AFF",
+       "icon-color":"#007AFF",
     });
       } else {
       $done({
@@ -50,7 +50,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
       content:
 		`IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle.fill",
-       "icon-color":"#FF007AFF",
+       "icon-color":"#007AFF",
      });
     }
    }
