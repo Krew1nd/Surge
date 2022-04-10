@@ -36,7 +36,7 @@ const DEFAULT_OPTIONS = {
   fullIconColor: '#FF35C759',
   fullStyle: 'good',
   onlyOriginalContent: '仅支持自制剧',
-  onlyOriginalIcon: 'info.circle.fill',
+  onlyOriginalIcon: 'questionmark.circle.fill',
   onlyOriginalIconColor: '#FF007AFF',
   onlyOriginalStyle: 'info',
   notAvailableContent: '不支持 Netflix',
