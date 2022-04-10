@@ -17,7 +17,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
     const jsonData = JSON.parse(data);
   switch (`${jsonData.org}`){
     case "":
-      if (`${jsonData.isp}` != "") {
+      if (`${jsonData.as}` != "") {
       $done({
       title:rootName,
       content:
@@ -36,11 +36,11 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
       }
       break;
     default:
-      if (`${jsonData.isp}` != "" && `${jsonData.isp}` != `${jsonData.org}`) {
+      if (`${jsonData.as}` != "" && `${jsonData.isp}` != `${jsonData.org}`) {
       $done({
       title:rootName,
       content:
-		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `数据中心：${jsonData.org}`,
+		`IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `数据中心：${jsonData.org}`,
       icon: "info.circle",
        "icon-color":"#369CF3",
     });
@@ -48,7 +48,7 @@ $httpClient.get('http://ip-api.com/json/?lang=zh-CN', function (error, response,
       $done({
       title:rootName,
       content:
-		`IP：${jsonData.query}\n` + `ISP：${jsonData.isp}\n` + `地区：${jsonData.country}`,
+		`IP：${jsonData.query}\n` + `AS：${jsonData.as}\n` + `地区：${jsonData.country}`,
       icon: "info.circle",
        "icon-color":"#369CF3",
      });
