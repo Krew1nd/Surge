@@ -6,7 +6,7 @@
  * DisneyPlus_Check = script-name=DisneyPlus_Check,title=Disney+ 解锁检测,style=alert,content=请刷新面板,update-interval=600
  *
  * [Script]
- * DisneyPlus_Check = type=generic,script-path=https://raw.githubusercontent.com/Krew1nd/Surge/main/DisneyPlus_Check.js
+ * DisneyPlus_Check = type=generic,script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/DisneyPlus_Check.js
  *
  * 支持使用脚本使用 argument 参数自定义配置，如：argument=key1=URLEncode(value1)&key2=URLEncode(value2)，具体参数如下所示，
  * title: 面板标题
