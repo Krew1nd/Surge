@@ -4,10 +4,10 @@ Surge配置参考注释
 ----------------------------------------
 
 [Script]
-Sub_info_Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
+Sub_Info_Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
 
 [Panel]
-Sub_info_Panel = script-name=Sub_info_Panel,update-interval=600
+Sub_Info_Panel = script-name=Sub_Info_Panel,update-interval=600
 
 ----------------------------------------
 
