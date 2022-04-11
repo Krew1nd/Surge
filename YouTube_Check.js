@@ -3,7 +3,7 @@
  * https://gist.githubusercontent.com/Hyseen/5ae36a6a5cb5690b1f2bff4aa19c766f/raw/youtube_premium_check.js?version=1633074636264
  *
  * [Panel]
- * YouTube_Check = script-name=YouTube_Check, title="YouTube Premium 解锁检测", update-interval=600
+ * YouTube_Check = script-name=YouTube_Check, title=YouTube Premium 解锁检测, content=请刷新面板, update-interval=600
  *
  * [Script]
  * YouTube_Check = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/main/YouTube_Check.js, argument=title=YouTube 解锁检测
