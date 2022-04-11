@@ -6,7 +6,7 @@
  * YouTube_Check = script-name=YouTube_Check, title=YouTube Premium 解锁检测, content=请刷新面板, update-interval=600
  *
  * [Script]
- * YouTube_Check = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/main/YouTube_Check.js, argument=title=YouTube 解锁检测
+ * YouTube_Check = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/YouTube_Check.js, argument=title=YouTube 解锁检测
  *
  * 支持使用脚本使用 argument 参数自定义配置，如：argument=key1=URLEncode(value1)&key2=URLEncode(value2)，具体参数如下所示，
  * title: 面板标题
