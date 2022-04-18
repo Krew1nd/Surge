@@ -15,7 +15,7 @@ Sub_Info_Panel = script-name=Sub_Info_Panel,update-interval=600
 
 可选参数 &reset_day，后面的数字替换成流量每月重置的日期，如1号就写1，8号就写8。如"&reset_day=8",不加该参数不显示流量重置信息。
 
-可选参数 &expire，机场链接不带expire信息的，可以手动传入expire参数，如"&expire=2022-02-01",注意一定要按照yyyy-MM-dd的格式。
+可选参数 &expire，机场链接不带expire信息的，可以手动传入expire参数，如"&expire=2022-02-01",注意一定要按照yyyy-MM-dd的格式。不希望显示到期信息也可以添加&expire=false取消显示。
 
 可选参数"title=xxx" 可以自定义标题。
 
@@ -41,8 +41,8 @@ let args = getArgs();
   if (resetDayLeft) {
     content.push(`${resetDayLeft}天后重置流量`);
   }
-
-  if (expire) {
+  
+  if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
     content.push(`${formatTime(expire)}到期`);
   }
