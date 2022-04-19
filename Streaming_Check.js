@@ -96,7 +96,7 @@ panel_result['content'] = content
         if (code === 'Not Available') {
           youtube_check_result += '未支持'
         } else {
-          youtube_check_result += '支持 ➤ '+flags.get(region.toUpperCase())
+          youtube_check_result += '支持 ➤ '+flags.get(code.toUpperCase())
         }
       })
       .catch((error) => {
@@ -152,7 +152,7 @@ panel_result['content'] = content
         if (code === 'Not Found') {
           return inner_check(80018499)
         }
-        netflix_check_result += '支持非自制剧 ➤ '+flags.get(region.toUpperCase())
+        netflix_check_result += '支持非自制剧 ➤ '+flags.get(code.toUpperCase())
         return Promise.reject('BreakSignal')
       })
       .then((code) => {
@@ -160,7 +160,7 @@ panel_result['content'] = content
           return Promise.reject('Not Available')
         }
   
-        netflix_check_result += '仅支持自制剧 ➤ '+flags.get(region.toUpperCase())
+        netflix_check_result += '仅支持自制剧 ➤ '+flags.get(code.toUpperCase())
         return Promise.reject('BreakSignal')
       })
       .catch((error) => {
