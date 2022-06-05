@@ -50,7 +50,7 @@ function getUserInfo(url) {
         resolve(resp.headers[header]);
         return;
       }
-      reject("鏈惈娴侀噺淇℃伅");
+      reject("链接响应头不带有流量信息");
     })
   );
 }
