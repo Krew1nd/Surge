@@ -8,7 +8,7 @@
   let total = info.total;
   let proportion = used / total;
   let expire = args.expire || info.expire;
-  let content = [`${toPercent(proportion)} quota has been used.`];
+  let content = [`${toPercent(proportion)} quota has been used`];
 
   let now = new Date();
   let hour = now.getHours();
@@ -17,7 +17,7 @@
   minutes = minutes > 9 ? minutes : "0" + minutes;
 
   $done({
-    title: `${args.title} resets in ${resetDayLeft} days.`,
+    title: `${args.title} resets in ${resetDayLeft} days`,
     content: content.join("\n"),
   });
 })();
