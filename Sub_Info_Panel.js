@@ -38,9 +38,9 @@ let args = getArgs();
   let expire = args.expire || info.expire;
   let content = [`${bytesToSize(used)} has been used`];
   
-  if (resetDayLeft) {
-    content.push(`Resets in ${resetDayLeft} days`);
-  }
+//  if (resetDayLeft) {
+//    content.push(`Resets in ${resetDayLeft} days`);
+//  }
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
