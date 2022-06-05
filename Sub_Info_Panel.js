@@ -42,10 +42,10 @@ let args = getArgs();
 //    content.push(`Resets in ${resetDayLeft} days`);
 //  }
   
-  if (expire && expire !== "false") {
-    if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Expires in ${formatTime(expire)}`);
-  }
+//  if (expire && expire !== "false") {
+//    if (/^[\d.]+$/.test(expire)) expire *= 1000;
+//    content.push(`Expires in ${formatTime(expire)}`);
+//  }
 
   $done({
     title: `${args.title} resets in ${resetDayLeft} days `,
