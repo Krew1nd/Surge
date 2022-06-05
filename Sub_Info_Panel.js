@@ -38,17 +38,17 @@ let args = getArgs();
   let expire = args.expire || info.expire;
   let content = [`${bytesToSize(used)} has been used`];
   
-//  if (resetDayLeft) {
-//    content.push(`Resets in ${resetDayLeft} days`);
-//  }
+  if (resetDayLeft) {
+    content.push(`Resets in ${resetDayLeft} days`);
+  }
   
-//  if (expire && expire !== "false") {
-//    if (/^[\d.]+$/.test(expire)) expire *= 1000;
-//    content.push(`Expires in ${formatTime(expire)}`);
-//  }
+  if (expire && expire !== "false") {
+    if (/^[\d.]+$/.test(expire)) expire *= 1000;
+    content.push(`Expires in ${formatTime(expire)}`);
+  }
 
   $done({
-    title: `${args.title} resets in ${resetDayLeft} days `,
+    title: `${args.title} refreshed at ${hour}:${minutes}`,
     content: content.join("\n"),
     icon: args.icon,
     "icon-color": args.color,
