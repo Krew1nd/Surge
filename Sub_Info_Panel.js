@@ -48,7 +48,7 @@ let args = getArgs();
   }
 
   $done({
-    title: `${args.title}`,
+    title: `${args.title} resets in ${resetDayLeft} days `,
     content: content.join("\n"),
     icon: args.icon,
     "icon-color": args.color,
