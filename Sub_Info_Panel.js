@@ -36,15 +36,15 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`${bytesToSize(used)} Ⅰ ${bytesToSize(total)}`];
+  let content = [`${bytesToSize(used)} has been used`];
   
   if (resetDayLeft) {
-    content.push(`${resetDayLeft}天后重置流量`);
+    content.push(`Resets in ${resetDayLeft} days`);
   }
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`${formatTime(expire)}到期`);
+    content.push(`Expires in ${formatTime(expire)}`);
   }
 
   $done({
