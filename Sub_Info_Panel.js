@@ -39,12 +39,12 @@ let args = getArgs();
   let content = [`${bytesToSize(used)} has been used`];
   
   if (resetDayLeft) {
-    content.push(`Resets in ${resetDayLeft} days`);
+    content.push(`Reset after ${resetDayLeft} days`);
   }
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Expires in ${formatTime(expire)}`);
+    content.push(`Expire in ${formatTime(expire)}`);
   }
 
   let now = new Date();
