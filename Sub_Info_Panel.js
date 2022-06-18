@@ -120,7 +120,6 @@ function getRmainingDays(resetDay) {
   let month = now.getMonth();
   let year = now.getFullYear();
   let daysInMonth;
-  let str = "days";
 
   if (resetDay > today) {
     daysInMonth = 0;
@@ -128,14 +127,16 @@ function getRmainingDays(resetDay) {
     daysInMonth = new Date(year, month + 1, 0).getDate();
   }
   return daysInMonth - today + resetDay;
+}
 
-  if (daysInMonth - today + resetDay > 2) {
+  let str = "days";
+
+  if (resetDayLeft > 2) {
     str = str.replace(str[3],'s');
   } else {
     str = str.replace(str[3],'');
   }
   return str;
-}
 
 function bytesToSize(bytes) {
   if (bytes === 0) return "0B";
