@@ -34,9 +34,9 @@ let args = getArgs();
   let resetDayLeft = getRmainingDays(parseInt(args["reset_day"]));
   let str = "days";
   if (resetDayLeft < 2) {
-    str = str.replace(str[0],'s');
+    str = str.replace(str[3],'\0');
   } else {
-    str = str.replace(str[0],'a');
+    str = str.replace(str[3],'s');
   }
 
   let used = info.download + info.upload;
