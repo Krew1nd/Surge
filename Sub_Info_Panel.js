@@ -131,7 +131,7 @@ function getRmainingDays(resetDay) {
 
   let str = "days";
 
-  if (resetDayLeft > 2) {
+  if (resetDayLeft >= 2) {
     str = str.replace(str[3],'s');
   } else {
     str = str.replace(str[3],'');
