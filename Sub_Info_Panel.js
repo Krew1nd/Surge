@@ -32,6 +32,12 @@ let args = getArgs();
   let info = await getDataInfo(args.url);
   if (!info) $done();
   let resetDayLeft = getRmainingDays(parseInt(args["reset_day"]));
+  let str = "days";
+  if (resetDayLeft < 2) {
+    str = str.replace(str[0],'s');
+  } else {
+    str = str.replace(str[0],'a');
+  }
 
   let used = info.download + info.upload;
   let total = info.total;
@@ -128,13 +134,6 @@ function getRmainingDays(resetDay) {
   }
   return daysInMonth - today + resetDay;
 }
-
-  let str = "days";
-  if (resetDayLeft < 2) {
-    str = str.replace("s","");
-  } else {
-    str = str;
-  }
 
 function bytesToSize(bytes) {
   if (bytes === 0) return "0B";
