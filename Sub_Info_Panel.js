@@ -130,6 +130,11 @@ function getRmainingDays(resetDay) {
 }
 
   let str = "days";
+  if (resetDayLeft < 2) {
+    str = str.replace("s","");
+  } else {
+    str = str;
+  }
 
 function bytesToSize(bytes) {
   if (bytes === 0) return "0B";
