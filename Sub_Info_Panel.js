@@ -42,7 +42,7 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`${bytesToSize(used)} has been used`];
+  let content = [`${bytesToSize(used)} of traffic has been used`];
   
   if (resetDayLeft) {
     content.push(`${resetDayLeft} left ${str} traffic reset`);
