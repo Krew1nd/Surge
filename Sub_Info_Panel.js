@@ -39,7 +39,7 @@ let args = getArgs();
   let content = [`${bytesToSize(used)} has been used`];
   
   if (resetDayLeft) {
-    content.push(`${resetDayLeft} left days traffic reset`);
+    content.push(`${resetDayLeft} left ${day} traffic reset`);
   }
   
   if (expire && expire !== "false") {
@@ -120,14 +120,21 @@ function getRmainingDays(resetDay) {
   let month = now.getMonth();
   let year = now.getFullYear();
   let daysInMonth;
+  let day;
 
   if (resetDay > today) {
     daysInMonth = 0;
   } else {
     daysInMonth = new Date(year, month + 1, 0).getDate();
   }
-
   return daysInMonth - today + resetDay;
+
+  if (daysInMonth - today + resetDay > 2) {
+    day = days
+  } else {
+    day = day
+  }
+  return day;
 }
 
 function bytesToSize(bytes) {
