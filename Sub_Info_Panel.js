@@ -36,15 +36,15 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`Used Traffic :${bytesToSize(used)}`];
+  let content = [`已用${bytesToSize(used)}`];
   
   if (resetDayLeft) {
-    content.push(`${resetDayLeft} Left Days Traffic Reset`);
+    content.push(`距离流量重置还有${resetDayLeft}天`);
   }
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Due date :${formatTime(expire)}`);
+    content.push(`套餐截止于${formatTime(expire)}`);
   }
 
   let now = new Date();
@@ -142,6 +142,7 @@ function formatTime(time) {
   let dateObj = new Date(time);
   let year = dateObj.getFullYear();
   let month = dateObj.getMonth() + 1;
+  let format_month = ("0" + month).slice(-2);
   let day = dateObj.getDate();
-  return year + "." + month + "." + day;
+  return year + "." + format_month + "." + day;
 }
