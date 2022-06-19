@@ -14,7 +14,7 @@
   let total = info.total;
   let proportion = used / total;
   let expire = args.expire || info.expire;
-  let content = [`${toPercent(proportion)} of the quota has been used`];
+  let content = [`${toPercent(proportion)} quota has been used`];
   
   if (resetDayLeft) {
     content.push(`${resetDayLeft} left ${str} traffic reset`);
@@ -123,6 +123,6 @@ function formatTime(time) {
 }
 
 function toPercent(proportion) {
-  const percent = Number(proportion*100).toFixed(2);
+  const percent = Number(proportion*100).toFixed(0);
   return `${percent}%`
 }
