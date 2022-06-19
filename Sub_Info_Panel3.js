@@ -119,7 +119,7 @@ function formatTime(time) {
   let month = dateObj.getMonth() + 1;
   let format_month = ("0" + month).slice(-2);
   let day = dateObj.getDate();
-  return year + "." + format_month + "" + day;
+  return year + "." + format_month + "." + day;
 }
 
 function toPercent(proportion) {
