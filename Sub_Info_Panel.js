@@ -42,15 +42,15 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`Traffic used：${bytesToSize(used)}`];
+  let content = [`${bytesToSize(used)} has been used`];
   
   if (resetDayLeft) {
-    content.push(`Reset：${resetDayLeft} ${str}`);
+    content.push(`${resetDayLeft} left ${str} traffic reset`);
   }
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Due date：${formatTime(expire)}`);
+    content.push(`Next due data is ${formatTime(expire)}`);
   }
 
   let now = new Date();
