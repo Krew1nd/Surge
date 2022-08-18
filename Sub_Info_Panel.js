@@ -32,7 +32,7 @@ let args = getArgs();
   let info = await getDataInfo(args.url);
   if (!info) $done();
   let resetDayLeft = getRmainingDays(parseInt(args["reset_day"]));
-  let str = "days";
+  let str = "Days";
   if (resetDayLeft < 2) {
     str = str.replace(str[3],'\0');
   } else {
@@ -42,15 +42,15 @@ let args = getArgs();
   let used = info.download + info.upload;
   let total = info.total;
   let expire = args.expire || info.expire;
-  let content = [`· ${bytesToSize(used)} has been used`];
+  let content = [`Traffic uesd：${bytesToSize(used)} has been used`];
   
   if (resetDayLeft) {
-    content.push(`· ${resetDayLeft} left ${str} traffic reset`);
+    content.push(`Reset：${resetDayLeft} ${str}`);
   }
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`· Next due date is ${formatTime(expire)}`);
+    content.push(`Due date：${formatTime(expire)}`);
   }
 
   let now = new Date();
@@ -149,5 +149,5 @@ function formatTime(time) {
   let month = dateObj.getMonth() + 1;
   let format_month = ("0" + month).slice(-2);
   let day = dateObj.getDate();
-  return year + "." + format_month + "." + day;
+  return year + "-" + format_month + "-" + day;
 }
