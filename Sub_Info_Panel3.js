@@ -1,9 +1,27 @@
+/*
+Surge配置参考注释
+----------------------------------------
+[Script]
+Sub_Info_Panel = type=generic,timeout=10,script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/sub_info_panel.js,script-update-interval=0,argument=url=[URL encode 后的机场节点链接]&reset_day=1&title=AmyInfo&icon=bonjour&color=#007aff
+[Panel]
+Sub_Info_Panel = script-name=Sub_Info_Panel,update-interval=600
+----------------------------------------
+先将带有流量信息的节点订阅链接encode，用encode后的链接替换"url="后面的[机场节点链接]
+可选参数 &reset_day，后面的数字替换成流量每月重置的日期，如1号就写1，8号就写8。如"&reset_day=8",不加该参数不显示流量重置信息。
+可选参数 &expire，机场链接不带expire信息的，可以手动传入expire参数，如"&expire=2022-02-01",注意一定要按照yyyy-MM-dd的格式。不希望显示到期信息也可以添加&expire=false取消显示。
+可选参数"title=xxx" 可以自定义标题。
+可选参数"icon=xxx" 可以自定义图标，内容为任意有效的 SF Symbol Name，如 bolt.horizontal.circle.fill，详细可以下载app https://apps.apple.com/cn/app/sf-symbols-browser/id1491161336
+可选参数"color=xxx" 当使用 icon 字段时，可传入 color 字段控制图标颜色，字段内容为颜色的 HEX 编码。如：color=#007aff
+----------------------------------------
+*/
+
+let args = getArgs();
+
 (async () => {
-  let args = getArgs();
   let info = await getDataInfo(args.url);
   if (!info) $done();
   let resetDayLeft = getRmainingDays(parseInt(args["reset_day"]));
-  let str = "days";
+  let str = "Days";
   if (resetDayLeft < 2) {
     str = str.replace(str[3],'\0');
   } else {
@@ -12,19 +30,19 @@
 
   let used = info.download + info.upload;
   let total = info.total;
-  let proportion = used / total;
   let expire = args.expire || info.expire;
-  let content = [`${toPercent(proportion)} quota has been used`];
-  
-  if (resetDayLeft) {
-    content.push(`${resetDayLeft} left ${str} traffic reset`);
-  }
+  let content = [`${bytesToSize(used)}／${bytesToSize(total)}`];
   
   if (expire && expire !== "false") {
     if (/^[\d.]+$/.test(expire)) expire *= 1000;
-    content.push(`Next due date is ${formatTime(expire)}`);
+    content.push(`${formatTime(expire)}`);
   }
   
+  if (resetDayLeft && expire && expire !== "false") {
+    if (/^[\d.]+$/.test(expire)) expire *= 1000;
+    content.push(`${resetDayLeft} ${str} · ${formatTime(expire)}`);
+  }
+
   let now = new Date();
   let hour = now.getHours();
   let minutes = now.getMinutes();
@@ -34,6 +52,8 @@
   $done({
     title: `${args.title} refreshed at ${hour}:${minutes}`,
     content: content.join("\n"),
+    icon: args.icon,
+    "icon-color": args.color,
   });
 })();
 
@@ -47,9 +67,10 @@ function getArgs() {
 }
 
 function getUserInfo(url) {
-  let request = { headers: { "User-Agent": "Clash" }, url };
+  let method = args.method || "head";
+  let request = { headers: { "User-Agent": "Quantumult%20X" }, url };
   return new Promise((resolve, reject) =>
-    $httpClient.get(request, (err, resp) => {
+    $httpClient[method](request, (err, resp) => {
       if (err != null) {
         reject(err);
         return;
@@ -65,7 +86,7 @@ function getUserInfo(url) {
         resolve(resp.headers[header]);
         return;
       }
-      reject("鏈惈娴侀噺淇℃伅");
+      reject("链接响应头不带有流量信息");
     })
   );
 }
@@ -101,7 +122,6 @@ function getRmainingDays(resetDay) {
   } else {
     daysInMonth = new Date(year, month + 1, 0).getDate();
   }
-
   return daysInMonth - today + resetDay;
 }
 
@@ -110,7 +130,7 @@ function bytesToSize(bytes) {
   let k = 1024;
   sizes = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
   let i = Math.floor(Math.log(bytes) / Math.log(k));
-  return (bytes / Math.pow(k, i)).toFixed(2) + " " + sizes[i];
+  return (bytes / Math.pow(k, i)).toFixed(1) + " " + sizes[i];
 }
 
 function formatTime(time) {
@@ -119,10 +139,5 @@ function formatTime(time) {
   let month = dateObj.getMonth() + 1;
   let format_month = ("0" + month).slice(-2);
   let day = dateObj.getDate();
-  return year + "." + format_month + "." + day;
-}
-
-function toPercent(proportion) {
-  const percent = Number(proportion*100).toFixed(0);
-  return `${percent}%`
+  return year + "-" + format_month + "-" + day;
 }
