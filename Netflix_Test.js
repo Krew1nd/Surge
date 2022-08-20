@@ -32,12 +32,12 @@ const BASE_URL = 'https://www.netflix.com/title/'
 const FILM_ID = 81215567
 const AREA_TEST_FILM_ID = 80018499
 const DEFAULT_OPTIONS = {
-  title: '',
+  title: 'Netflix Test',
   fullContent: '支持 #REGION_FLAG# #REGION_NAME#',
   fullIcon: 'checkmark.seal.fill',
   fullIconColor: '#FF35C759',
   fullStyle: 'good',
-  onlyOriginalContent: '部分支持 #REGION_FLAG# #REGION_NAME#',
+  onlyOriginalContent: '不完全支持 #REGION_FLAG# #REGION_NAME#',
   onlyOriginalIcon: 'questionmark.circle.fill',
   onlyOriginalIconColor: '#FF007AFF',
   onlyOriginalStyle: 'info',
