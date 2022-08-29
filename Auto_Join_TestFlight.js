@@ -16,7 +16,7 @@ $httpClient.get({url: testurl + ID,headers: header}, function(error, resp, data)
                 let jsonBody = JSON.parse(body)
                 $notification.post(jsonBody.data.name, "TestFlight加入成功", "")
                 console.log(jsonBody.data.name + " TestFlight加入成功")
-//                $done($httpAPI('POST', '/v1/modules', {'Auto Join TestFlight': 'false'}))
+                $done($httpAPI('POST', '/v1/modules', {'Auto Join TestFlight': 'false'}))
             });
         }
     } else {
