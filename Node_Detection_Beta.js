@@ -1,3 +1,13 @@
+/*
+
+[Panel]
+Node Detection = script-name=Node Detection,title=Info from ip-api.com,content=请刷新Panel,style=info,update-interval=1
+
+[Script]
+Node Detection = type=generic,script-path=Scripts/Node_Detection_Beta.js
+
+*/
+
 const request = {
   url: "http://ip-api.com/json",
   method: "GET",
