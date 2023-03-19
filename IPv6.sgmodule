@@ -1,0 +1,6 @@
+#!name=IPv6
+#!desc=配合IPv6 Detection脚本，根据网络环境自动开启/关闭IPv6
+
+[General]
+ipv6 = true
+ipv6-vif = auto
