@@ -3,10 +3,10 @@
  * https://gist.githubusercontent.com/Hyseen/5ae36a6a5cb5690b1f2bff4aa19c766f/raw/youtube_premium_check.js?version=1633074636264
  *
  * [Panel]
- * YouTube_Check = script-name=YouTube_Check, title=YouTube Premium 解锁检测, content=请刷新面板, update-interval=600
+ * YouTube Detection = script-name=YouTube Detection, title=YouTube Detection, content=请刷新Panel, update-interval=600
  *
  * [Script]
- * YouTube_Check = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/YouTube_Check.js, argument=title=YouTube 解锁检测
+ * YouTube_Check = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/Script/YouTube_Detection.js, argument=title=YouTube Detection
  *
  * 支持使用脚本使用 argument 参数自定义配置，如：argument=key1=URLEncode(value1)&key2=URLEncode(value2)，具体参数如下所示，
  * title: 面板标题
@@ -27,8 +27,8 @@
 const BASE_URL = 'https://www.youtube.com/premium'
 
 const DEFAULT_OPTIONS = {
-  title: 'YouTube Premium 解锁检测',
-  availableContent: '支持 YouTube Premium ➤ #REGION_FLAG# #REGION_NAME#',
+  title: 'YouTube Premium Detection',
+  availableContent: '支持 YouTube Premium -> #REGION_FLAG# #REGION_NAME#',
   availableIcon: 'checkmark.seal.fill',
   availableIconColor: '#FF35C759',
   availableStyle: 'good',

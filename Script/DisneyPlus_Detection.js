@@ -3,10 +3,10 @@
  * https://gist.githubusercontent.com/Hyseen/729fc4c3ac28c3f2e7c4a832d81780f3/raw/disney_check.js
  *
  * [Panel]
- * DisneyPlus_Check = script-name=DisneyPlus_Check,title=Disney+ 解锁检测,style=alert,content=请刷新面板,update-interval=600
+ * DisneyPlus Detection = script-name=DisneyPlus Detection,title=Disney+ Detection,style=alert,content=请刷新Panel,update-interval=600
  *
  * [Script]
- * DisneyPlus_Check = type=generic,script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/DisneyPlus_Check.js
+ * DisneyPlus_Check = type=generic,script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/Script/DisneyPlus_Detection.js
  *
  * 支持使用脚本使用 argument 参数自定义配置，如：argument=key1=URLEncode(value1)&key2=URLEncode(value2)，具体参数如下所示，
  * title: 面板标题
@@ -44,11 +44,11 @@ const STATUS_ERROR = -2
 
 const DEFAULT_OPTIONS = {
   title: 'Disney+ 解锁检测',
-  availableContent: '支持 Disney+ ➤ #REGION_FLAG# #REGION_NAME#',
+  availableContent: '支持 Disney+ -> #REGION_FLAG# #REGION_NAME#',
   availableIcon: 'checkmark.seal.fill',
   availableIconColor: '#FF35C759',
   availableStyle: 'good',
-  comingContent: 'Coming Soon ➤ #REGION_FLAG# #REGION_NAME#',
+  comingContent: 'Coming Soon -> #REGION_FLAG# #REGION_NAME#',
   comingIcon: 'questionmark.circle.fill',
   comingIconColor: '#FF007AFF',
   comingStyle: 'info',

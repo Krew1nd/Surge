@@ -3,10 +3,10 @@
  * https://gist.githubusercontent.com/Hyseen/b06e911a41036ebc36acf04ddebe7b9a/raw/nf_check.js?version=1633074636264
  *
  * [Panel]
- * Netflix_Check = script-name=Netflix_Check, title=Netflix 解锁检测, content=请刷新面板, update-interval=600
+ * Netflix Detection = script-name=Netflix Detection, title=Netflix Detection, content=请刷新Panel, update-interval=600
  *
  * [Script]
- * Netflix_Check = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/Netflix_Check.js, argument=title=Netflix 解锁检测
+ * Netflix Detection = type=generic, script-path=https://raw.githubusercontent.com/Krew1nd/Surge/master/Script/Netflix_Detection.js, argument=title=Netflix Detection
  *
  * 支持使用脚本使用 argument 参数自定义配置，如：argument=key1=URLEncode(value1)&key2=URLEncode(value2)，具体参数如下所示，
  * title: 面板标题
@@ -33,11 +33,11 @@ const FILM_ID = 81215567
 const AREA_TEST_FILM_ID = 80018499
 const DEFAULT_OPTIONS = {
   title: 'Netflix Test',
-  fullContent: '支持 #REGION_FLAG# #REGION_NAME#',
+  fullContent: '支持 -> #REGION_FLAG# #REGION_NAME#',
   fullIcon: 'checkmark.seal.fill',
   fullIconColor: '#FF35C759',
   fullStyle: 'good',
-  onlyOriginalContent: '不完全支持 #REGION_FLAG# #REGION_NAME#',
+  onlyOriginalContent: '仅自制剧 -> #REGION_FLAG# #REGION_NAME#',
   onlyOriginalIcon: 'questionmark.circle.fill',
   onlyOriginalIconColor: '#FF007AFF',
   onlyOriginalStyle: 'info',
