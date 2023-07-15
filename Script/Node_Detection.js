@@ -3,7 +3,7 @@ const request = {
   method: "GET",
 };
 
-const title = "";
+const title = "Info from ip-api.com";
 const icon = "network";
 
 $httpClient.get(request, (error, response, body) => {
