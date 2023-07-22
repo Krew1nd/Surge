@@ -1,11 +1,11 @@
-//
+/*
 可配合argument一同使用。现支持参数：
 input：配置关键词列表（可选zh,enFull,enShort)
 output：配置输出国家列表（可选zh,enFull,enShort)
 airport：机场名
 del1: 如果一个地区只有一个节点，则去除它的"1"
 eg：https://raw.githubusercontent.com/qwerzl/rename.js/main/rename.js#input={你的选择}&output={你的选择}&airport={解码后的机场名称}&del1
-//
+*/
 
 // 创建国家列表
 const enShort = ['HK', 'MO', 'TW', 'JP', 'KR', 'SG', 'SG', 'US', 'UK', 'FR', 'DE', 'AU', 'AU', 'AF', 'AL', 'DZ', 'AO', 'AR', 'AM', 'AT', 'AZ', 'BH', 'BD', 'BY', 'BE', 'BZ', 'BJ', 'BT', 'BO', 'BA', 'BA', 'BW', 'BR', 'VG', 'BN', 'BG', 'BF', 'BI', 'KH', 'CM', 'CA', 'CV', 'KY', 'CF', 'TD', 'CL', 'CN', 'CO', 'KM', 'CG', 'CD', 'CR', 'HR', 'CY', 'CZ', 'DK', 'DJ', 'DO', 'EC', 'EG', 'SV', 'GQ', 'ER', 'EE', 'ET', 'FJ', 'FI', 'GA', 'GM', 'GE', 'GH', 'GR', 'GL', 'GT', 'GN', 'GY', 'HT', 'HN', 'HU', 'IS', 'IN', 'ID', 'ID', 'IR', 'IQ', 'IE', 'IM', 'IL', 'IT', 'CI', 'JM', 'JO', 'KZ', 'KE', 'KW', 'KG', 'LA', 'LV', 'LB', 'LS', 'LR', 'LY', 'LT', 'LU', 'MK', 'MG', 'MW', 'MY', 'MV', 'ML', 'MT', 'MR', 'MU', 'MX', 'MD', 'MC', 'MN', 'ME', 'MA', 'MZ', 'MM', 'NA', 'NP', 'NL', 'NZ', 'NI', 'NE', 'NG', 'KP', 'NO', 'OM', 'PK', 'PA', 'PY', 'PE', 'PH', 'PT', 'PR', 'QA', 'RE', 'RO', 'RU', 'RW', 'SM', 'SA', 'SN', 'RS', 'SL', 'SK', 'SI', 'SO', 'ZA', 'ES', 'LK', 'SD', 'SR', 'SZ', 'SE', 'CH', 'SY', 'TJ', 'TZ', 'TH', 'TG', 'TO', 'TT', 'TN', 'TR', 'TM', 'VI', 'UG', 'UA', 'AE', 'AE', 'UY', 'UZ', 'VA', 'VE', 'VN', 'YE', 'YU', 'ZR', 'ZM', 'ZW', 'BD', 'CZ', 'AD','Chuncheon','Seoul','Osaka','Tokyo','London','Taipei','Taipei','Los Angeles','San Jose','Silicon Valley','Michigan','Mumbai','Frankfurt','Zurich','Moscow','Reunion','PL'];
