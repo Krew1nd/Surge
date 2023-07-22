@@ -4,7 +4,7 @@ input：配置关键词列表（可选zh,enFull,enShort)
 output：配置输出国家列表（可选zh,enFull,enShort)
 airport：机场名
 del1: 如果一个地区只有一个节点，则去除它的"1"
-eg：https://raw.githubusercontent.com/qwerzl/rename.js/main/rename.js#input={你的选择}&output={你的选择}&airport={解码后的机场名称}&del1
+eg：https://raw.githubusercontent.com/Krew1nd/Surge/master/Script/Rename.js#input={你的选择}&output={你的选择}&airport={解码后的机场名称}&del1
 */
 
 // 创建国家列表
