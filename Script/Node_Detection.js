@@ -4,7 +4,7 @@ const request = {
 };
 
 const title = "Info from ip-api.com";
-const icon = "network";
+const icon = "globe.asia.australia.fill";
 
 $httpClient.get(request, (error, response, body) => {
   if (error) {
